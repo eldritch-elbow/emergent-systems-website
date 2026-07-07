@@ -4,5 +4,5 @@ import { defineConfig } from 'astro/config';
 // When a custom domain is ready: drop `base`, add a `public/CNAME` file with the domain.
 export default defineConfig({
   site: 'https://eldritch-elbow.github.io',
-  base: '/emergent-systems-website',
+  base: '/emergent-systems-website/',
 });
