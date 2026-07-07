@@ -8,6 +8,8 @@ interface CaseStudyBase {
   title: string;
   lead: string;
   servicesDrawn: string[];
+  /** Filename under public/uploads/case-studies/ */
+  image: string;
 }
 
 export interface StandardCaseStudy extends CaseStudyBase {
@@ -35,6 +37,7 @@ export const caseStudies: CaseStudy[] = [
     client: 'Closed Loop Medicine',
     cardBody:
       'Delivered clinical-grade software and clinical-trial systems, with successful Innovate UK grants to the company’s name.',
+    image: 'closed-loop-medicine.png',
     confidential: false,
     eyebrow: 'Case study · SaMD & clinical trials',
     title: 'Clinical-grade software, delivered under trial conditions',
@@ -81,6 +84,7 @@ export const caseStudies: CaseStudy[] = [
     cardTitle: 'Platform architecture',
     client: 'Our Future Health',
     cardBody: 'Architecture for a personalised health platform operating at UK population scale.',
+    image: 'our-future-health.jpg',
     confidential: false,
     eyebrow: 'Case study · Platform architecture',
     title: 'Architecture for a personalised health platform at population scale',
@@ -124,8 +128,9 @@ export const caseStudies: CaseStudy[] = [
     slug: 'dd',
     code: 'DD',
     cardTitle: 'Technical due diligence',
-    client: 'Platform acquisition · Lean Library',
+    client: 'Platform acquisition',
     cardBody: 'Technical, team and architecture evaluation supporting a platform acquisition decision.',
+    image: 'confidential-placeholder.svg',
     confidential: true,
     eyebrow: 'Case study · Technical due diligence',
     title: 'Technical due diligence on a platform acquisition',
