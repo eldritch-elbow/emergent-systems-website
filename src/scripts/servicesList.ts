@@ -6,12 +6,14 @@ export function initServicesList(root: HTMLElement): void {
   const rows = Array.from(root.querySelectorAll<HTMLElement>('.svc-row'));
   const codeEl = root.querySelector<HTMLElement>('.callout-code');
   const outcomeEl = root.querySelector<HTMLElement>('.callout-outcome');
-  if (rows.length === 0 || !codeEl || !outcomeEl) return;
+  const addendumEl = root.querySelector<HTMLElement>('.callout-addendum');
+  if (rows.length === 0 || !codeEl || !outcomeEl || !addendumEl) return;
 
   const select = (row: HTMLElement) => {
     rows.forEach((r) => r.classList.toggle('is-selected', r === row));
     codeEl.textContent = row.dataset.code ?? '';
     outcomeEl.textContent = row.dataset.outcome ?? '';
+    addendumEl.textContent = row.dataset.addendum ?? '';
   };
 
   rows.forEach((row) => {

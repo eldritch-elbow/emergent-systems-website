@@ -15,6 +15,8 @@ interface CaseStudyBase {
 export interface StandardCaseStudy extends CaseStudyBase {
   confidential: false;
   meta: Array<{ label: string; value: string }>;
+  /** Filename under public/uploads/case-studies/, shown as the detail-page hero banner */
+  heroImage: string;
   heroImageLabel: string;
   sections: Array<{ heading: string; paragraphs: string[]; bullets?: string[] }>;
   note?: string;
@@ -48,7 +50,8 @@ export const caseStudies: CaseStudy[] = [
       { label: 'Stage', value: 'Clinical trials · SaMD' },
       { label: 'Focus', value: 'Architecture · Quality · Evidence' },
     ],
-    heroImageLabel: 'case-study hero image / product shot',
+    heroImage: 'clm-hero.jpg',
+    heroImageLabel: 'A smartphone medication app alongside a connected pill dispenser',
     sections: [
       {
         heading: 'The challenge',
@@ -95,7 +98,8 @@ export const caseStudies: CaseStudy[] = [
       { label: 'Stage', value: 'Platform build-out' },
       { label: 'Focus', value: 'Architecture · Data · Scale' },
     ],
-    heroImageLabel: 'case-study hero image / product shot',
+    heroImage: 'ofh-hero.jpg',
+    heroImageLabel: 'A rendered visualisation of a DNA double helix',
     sections: [
       {
         heading: 'The challenge',

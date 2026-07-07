@@ -6,32 +6,38 @@ const services = [
     code: 'CTO',
     name: 'Fractional CTO — Digital Health',
     outcome: 'Secure a senior technical leader without full-time hiring.',
+    addendum: 'On retainer, typically 1–3 days a week — covering strategy, architecture, hiring, and investor or board cover.',
   },
   {
     code: 'SPRINT',
     name: 'Technology Strategy Sprint',
     outcome:
-      'Develop a technology strategy to realise your vision, de-risked with a scalable prototype.',
+      'Develop a technology strategy to realise your vision.',
+    addendum: 'A 4–6 week engagement: technology strategy, architecture diagrams, an investable roadmap, a risk register, and a working proof-of-concept.',
   },
   {
     code: 'DILIGENCE',
     name: 'Technical Due Diligence',
     outcome: 'Gain a clear read on technical risk before you commit.',
+    addendum: 'A 2–3 week technical, AI/ML, regulatory, and team evaluation for VCs and acquirers — delivered as a written report plus a Q&A memo.',
   },
   {
     code: 'SaMD',
     name: 'SaMD & Regulated Software Advisory',
     outcome: 'Establish a credible regulatory path for your clinical software.',
+    addendum: 'Focused advisory on software design, quality system, and evidence generation for clinical-grade software.',
   },
   {
     code: 'BOARD',
     name: 'Board Technical Advisor',
     outcome: 'Provide board assurance for your technology choices.',
+    addendum: 'An independent technical voice at board level, through quarterly sessions plus interim memos.',
   },
   {
     code: 'GRANT',
     name: 'Innovate UK Grant Advisory',
     outcome: 'Build strong, reviewer-ready innovation submissions.',
+    addendum: 'Technical narrative and evidence shaped to what Innovate UK reviewers are scoring against.',
   },
 ];
 
@@ -46,12 +52,17 @@ const first = services[0];
       A focused set of engagements. Hover a service to see the outcome it's designed to deliver.
     </p>
   </div>
-  <div id="servicesRoot" style="display:flex;gap:46px;align-items:flex-start;margin-top:28px">
+  <div id="servicesRoot" style="display:flex;gap:46px;align-items:stretch;margin-top:28px">
     <div style="flex:1.32">
       <div class="svc-list">
         {
           services.map((s, i) => (
-            <div class={`svc-row${i === 0 ? ' is-selected' : ''}`} data-code={s.code} data-outcome={s.outcome}>
+            <div
+              class={`svc-row${i === 0 ? ' is-selected' : ''}`}
+              data-code={s.code}
+              data-outcome={s.outcome}
+              data-addendum={s.addendum}
+            >
               <span class="svc-code">{s.code}</span>
               <span class="svc-name">{s.name}</span>
               <span class="svc-arrow">→</span>
@@ -65,6 +76,7 @@ const first = services[0];
         <p class="callout-code">{first.code}</p>
         <p class="callout-label">What you get</p>
         <p class="callout-outcome">{first.outcome}</p>
+        <p class="callout-addendum">{first.addendum}</p>
         <a class="btn btn-coral" href={`${base}#contact`} style="align-self:flex-start;margin-top:auto"
           >Discuss this engagement →</a
         >
