@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emergentsystems.io/sitemap-index.xml

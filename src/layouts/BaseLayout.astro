@@ -4,9 +4,35 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description: string;
+  /** Root-relative path to a social preview image. Defaults to the brand icon. */
+  image?: string;
+  /** Extra JSON-LD objects for this page (e.g. BreadcrumbList), beyond the site-wide Organization schema. */
+  structuredData?: object[];
 }
 
-const { title, description } = Astro.props;
+const { title, description, image, structuredData = [] } = Astro.props;
+const base = import.meta.env.BASE_URL;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(image ?? `${base}uploads/emergent-systems-icon.png`, Astro.site);
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Emergent Systems',
+  url: 'https://emergentsystems.io',
+  logo: 'https://emergentsystems.io/uploads/emergent-systems-icon.png',
+  description:
+    'Medical technology and software consultancy helping digital health innovators bridge science, AI, software, and regulation.',
+  email: 'emergentsystems.consulting@gmail.com',
+  founder: {
+    '@type': 'Person',
+    name: 'James Siddle',
+    url: 'https://www.jamessiddle.net',
+    sameAs: ['https://www.linkedin.com/in/jsiddle/'],
+  },
+  sameAs: ['https://www.linkedin.com/in/jsiddle/', 'https://www.jamessiddle.net'],
+};
 ---
 
 <!DOCTYPE html>
@@ -16,12 +42,32 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Emergent Systems" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <link rel="icon" href={`${base}uploads/emergent-systems-icon.png`} type="image/png" />
+    <link rel="apple-touch-icon" href={`${base}uploads/emergent-systems-icon.png`} />
+    <meta name="theme-color" content="#1d2333" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    {structuredData.map((data) => <script type="application/ld+json" set:html={JSON.stringify(data)} />)}
   </head>
   <body>
     <slot />
