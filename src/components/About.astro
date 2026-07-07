@@ -1,9 +1,17 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
 <div
   class="sec"
   id="about"
   style="display:flex;gap:44px;align-items:flex-start;background:var(--c-band);border-top:1px solid var(--c-band-border);border-bottom:1px solid var(--c-band-border)"
 >
-  <div class="img-placeholder" style="width:150px;height:150px;border-radius:50%;flex:none">photo</div>
+  <img
+    src={`${base}uploads/james-siddle-headshot.jpg`}
+    alt="James Siddle"
+    style="width:150px;height:150px;border-radius:50%;flex:none;object-fit:cover"
+  />
   <div style="flex:1">
     <p class="eyebrow">About</p>
     <h2 class="h2" style="margin-bottom:12px">Led by James Siddle</h2>
