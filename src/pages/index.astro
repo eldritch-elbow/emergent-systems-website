@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Problem from '../components/Problem.astro';
+import Approach from '../components/Approach.astro';
+import Services from '../components/Services.astro';
+import Work from '../components/Work.astro';
+import About from '../components/About.astro';
+import ContactFooter from '../components/ContactFooter.astro';
+---
+
+<BaseLayout
+  title="Emergent Systems — Medical Technology and Software Consultancy"
+  description="Helping digital health innovators cut through the complexity to realise the value of their ideas, attract investment, and make a real impact in healthcare by creating safe, secure, and scalable regulated products."
+>
+  <div class="page">
+    <Nav />
+    <Hero />
+    <Problem />
+    <Approach />
+    <Services />
+    <Work />
+    <About />
+    <ContactFooter />
+  </div>
+</BaseLayout>

@@ -1,0 +1,18 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<div
+  style="display:flex;align-items:center;gap:22px;padding:20px 84px;background:var(--c-page);border-bottom:1px solid var(--c-nav-border)"
+>
+  <a class="brand" href={`${base}`}>
+    <img src={`${base}uploads/emergent-systems-icon.png`} alt="Emergent Systems logo" />
+    <span>Emergent Systems</span>
+  </a>
+  <div style="flex:1"></div>
+  <a class="navlink" href={`${base}#approach`}>Approach</a>
+  <a class="navlink" href={`${base}#services`}>Services</a>
+  <a class="navlink" href={`${base}#work`}>Work</a>
+  <a class="navlink" href={`${base}#about`}>About</a>
+  <a class="btn btn-coral" href={`${base}#contact`}>Get in touch</a>
+</div>

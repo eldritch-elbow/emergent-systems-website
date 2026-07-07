@@ -1,0 +1,83 @@
+:root {
+  /* Colours — surfaces */
+  --c-desk: #e7e2da;
+  --c-page: #f6f2ea;
+  --c-band: #edece8;
+  --c-band-border: #d8d8d0;
+  --c-nav-border: #e7ddcd;
+
+  /* Colours — ink / navy */
+  --c-ink: #1d2333;
+  --c-ink-deep: #161b29;
+  --c-ink-border: #2e344a;
+  --c-ink-border-light: #3c4258;
+
+  /* Colours — accent */
+  --c-coral: #d9663c;
+  --c-coral-dark: #c0562f;
+  --c-coral-light: #f0a07f;
+  --c-coral-outline-border: #e2b4a0;
+
+  /* Colours — text */
+  --c-text-primary: #1d2333;
+  --c-text-body: #5c6473;
+  --c-text-lead: #57606f;
+  --c-text-on-navy: #aeb3c0;
+  --c-text-muted-1: #8a8172;
+  --c-text-muted-2: #a99f8d;
+  --c-text-muted-3: #b98d6f;
+  --c-text-muted-4: #9a917f;
+
+  /* Colours — chips */
+  --c-chip-coral-bg: #f7e9e0;
+  --c-chip-coral-border: #eecfc0;
+  --c-chip-coral-text: #c0562f;
+  --c-chip-solid-bg: #e2e2db;
+  --c-chip-solid-border: #d4d5cc;
+  --c-chip-solid-text: #585a52;
+
+  /* Colours — cards */
+  --c-card-work: #fffdf9;
+  --c-card-services: #fbf8f2;
+  --c-card-side: #eae6dd;
+  --c-card-border-work: #ece3d5;
+  --c-card-border-services: #e2dccf;
+  --c-card-border-side: #e2d9c8;
+
+  /* Colours — placeholder image */
+  --c-img-stripe-a: #efe7d8;
+  --c-img-stripe-b: #e6dccb;
+  --c-img-border: #e2d6c4;
+  --c-img-label: #ad9f88;
+
+  /* Colours — confidential */
+  --c-conf-border: #cbc0aa;
+  --c-conf-redact: #ddd5c6;
+
+  /* Typography */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-body: system-ui, sans-serif;
+
+  /* Spacing */
+  --sec-padding: 70px 84px;
+  --sec-padding-case-study: 56px 84px;
+  --gap-major: 52px;
+  --gap-row: 14px;
+
+  /* Radius */
+  --radius-button: 9px;
+  --radius-card: 12px;
+  --radius-card-lg: 14px;
+  --radius-feature: 18px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-page: 0 8px 40px rgba(29, 35, 51, 0.14);
+  --shadow-hero: 0 10px 34px rgba(29, 35, 51, 0.16);
+  --shadow-card: 0 4px 22px rgba(29, 35, 51, 0.07);
+  --shadow-services-list: 0 2px 14px rgba(29, 35, 51, 0.04);
+
+  /* Page shell */
+  --page-width: 1120px;
+}

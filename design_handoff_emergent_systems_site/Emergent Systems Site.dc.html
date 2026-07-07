@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#e7e2da;font-family:system-ui,sans-serif;color:#1d2333}
+.page{width:1120px;margin:36px auto;background:#f6f2ea;border-radius:14px;overflow:hidden;box-shadow:0 8px 40px rgba(29,35,51,.14)}
+.eyebrow{font:600 12px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#c0562f;margin:0 0 16px}
+.h1{font:600 44px/1.12 'Space Grotesk';letter-spacing:-.02em;color:#1d2333;margin:0 0 20px}
+.h2{font:600 30px/1.18 'Space Grotesk';letter-spacing:-.01em;color:#1d2333;margin:0 0 14px}
+.h3{font:600 18px 'Space Grotesk';color:#1d2333;margin:0 0 8px}
+.lead{font:400 19px/1.55 system-ui;color:#57606f;margin:0}
+.body{font:400 15px/1.6 system-ui;color:#5c6473;margin:0}
+.small{font:400 13px/1.5 system-ui;color:#8a8172}
+.sec{padding:70px 84px}
+.row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{font:600 14px 'Space Grotesk';padding:13px 22px;border-radius:9px;text-decoration:none;display:inline-block}
+.btn-navy{background:#1d2333;color:#fff}
+.btn-coral{background:#d9663c;color:#fff}
+.btn-ocoral{background:transparent;color:#c0562f;border:1.5px solid #e2b4a0}
+.btn-owhite{background:transparent;color:#fff;border:1.5px solid #3c4258}
+.chip{font:600 12px 'IBM Plex Mono',monospace;padding:7px 13px;border-radius:999px;background:#f7e9e0;color:#c0562f;border:1px solid #eecfc0}
+.chip-solid{font:600 12px 'IBM Plex Mono',monospace;padding:7px 13px;border-radius:999px;background:#e2e2db;color:#585a52;border:1px solid #d4d5cc}
+.img{background:repeating-linear-gradient(45deg,#efe7d8,#efe7d8 8px,#e6dccb 8px,#e6dccb 16px);border:1px solid #e2d6c4;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#ad9f88;font:12px 'IBM Plex Mono',monospace;text-align:center;padding:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.svc{background:#fff;border:1px solid #e5e1d9;border-radius:12px;padding:22px}
+.svc .n{font:600 12px 'IBM Plex Mono',monospace;color:#d9663c;margin:0 0 12px}
+.out{margin:18px 0 0;padding-top:16px;border-top:1px solid #ece7de}
+.out-l{display:block;font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase;color:#a99f8d;margin:0 0 6px}
+.out-t{font:600 14.5px/1.42 'Space Grotesk';color:#1d2333}
+.brand{display:flex;align-items:center;gap:11px;font:600 18px 'Space Grotesk';color:#1d2333}
+.brand img{width:32px;height:32px;border-radius:8px;display:block}
+.navlink{font:500 14px system-ui;color:#57606f;text-decoration:none}
+/* chain */
+.chain{display:flex;align-items:flex-start;gap:0;flex-wrap:wrap}
+.cnode{display:flex;flex-direction:column;align-items:center;gap:11px;flex:1;min-width:96px;text-align:center}
+.circle{width:60px;height:60px;border-radius:50%;border:2px solid #d9663c;display:flex;align-items:center;justify-content:center;font:600 13px 'Space Grotesk';color:#fff}
+.clab{font:600 13px/1.3 system-ui;color:#e7e0d4}
+.arrow{flex:0 0 34px;height:2px;background:#3d4459;margin-top:29px;position:relative}
+.arrow:after{content:'';position:absolute;right:-1px;top:-4px;border-left:8px solid #3d4459;border-top:5px solid transparent;border-bottom:5px solid transparent}
+</style>
+</helmet>
+
+<div class="page">
+
+  <!-- NAV -->
+  <div style="display:flex;align-items:center;gap:22px;padding:20px 84px;background:#f6f2ea;border-bottom:1px solid #e7ddcd">
+    <div class="brand"><img src="uploads/Emergent Systems Icon.png" alt="Emergent Systems logo"><span>Emergent Systems</span></div>
+    <div style="flex:1"></div>
+    <a class="navlink" href="#approach">Approach</a>
+    <a class="navlink" href="#services">Services</a>
+    <a class="navlink" href="#work">Work</a>
+    <a class="navlink" href="#about">About</a>
+    <a class="btn btn-coral" href="#contact">Get in touch</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="sec" style="display:flex;gap:52px;align-items:center;padding-top:76px;padding-bottom:76px">
+    <div style="flex:1.25">
+      <p class="eyebrow">Medical Technology and Software Consultancy</p>
+      <h1 class="h1">Bringing order to chaos in health technology, across science, AI, software, and regulation.</h1>
+      <p class="lead">Helping digital health innovators cut through the complexity to realise the value of their ideas, attract investment, and make a real impact in healthcare by creating safe, secure, and scalable regulated products.</p>
+      <div class="row" style="margin-top:30px"><a class="btn btn-navy" href="#services">See services</a><a class="btn btn-ocoral" href="#contact">Book a call →</a></div>
+    </div>
+    <div style="flex:1">
+      <div style="position:relative;height:300px;border-radius:14px;overflow:hidden;box-shadow:0 10px 34px rgba(29,35,51,.16)">
+        <canvas id="heroField" role="img" aria-label="Order, waiting to be uncovered in apparent chaos — a network crystallising out of a chaotic cloud" style="display:block;width:100%;height:100%;background:#1d2333"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE GAP -->
+  <div class="sec" style="background:#edece8;border-top:1px solid #d8d8d0;border-bottom:1px solid #d8d8d0">
+    <p class="eyebrow">The problem</p>
+    <h2 class="h2" style="max-width:820px">Most teams have world-class science or world-class engineering — rarely both, and almost never with the regulatory fluency that clinical-grade software demands.</h2>
+    <p class="body" style="max-width:720px">That gap is where good digital health companies quietly fail. Bridging from scientific idea to an investable product concept with a robust regulatory and technology strategy is intrinsically complex, and an easy place to stall without expert insight.</p>
+    <div class="row" style="margin-top:26px">
+      <span class="chip-solid">Founders · CTOs · technical leaders</span>
+      <span class="chip-solid">Seed to Series B</span>
+      <span class="chip-solid">Healthtech &amp; life sciences</span>
+    </div>
+  </div>
+
+  <!-- THE BRIDGE (inset navy card) -->
+  <div class="sec" id="approach" style="padding-top:60px;padding-bottom:60px">
+    <div style="position:relative;background:#1d2333;border-radius:18px;padding:44px 48px;overflow:hidden">
+      <canvas id="approachField" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+      <div style="position:relative;z-index:1">
+      <p class="eyebrow" style="color:#f0a07f">End to end</p>
+      <h2 class="h2" style="color:#fff;margin-bottom:30px">One advisor, the full technical picture</h2>
+      <div class="chain">
+        <div class="cnode"><div class="circle">01</div><div class="clab">Scientific<br>insight</div></div>
+        <div class="arrow"></div>
+        <div class="cnode"><div class="circle">02</div><div class="clab">AI / ML<br>judgement</div></div>
+        <div class="arrow"></div>
+        <div class="cnode"><div class="circle">03</div><div class="clab">Software<br>architecture</div></div>
+        <div class="arrow"></div>
+        <div class="cnode"><div class="circle">04</div><div class="clab">Regulatory<br>pathway</div></div>
+        <div class="arrow"></div>
+        <div class="cnode"><div class="circle" style="border-color:#f0a07f">05</div><div class="clab">Investor<br>narrative</div></div>
+      </div>
+      <p class="body" style="color:#aeb3c0;max-width:760px;margin-top:34px">Emergent Systems finds the pattern hidden across scientific insight, AI/ML judgement, software architecture, regulatory pathway, and investor narrative — and resolves it into a single coherent technology strategy. The rare combination that usually gets split across four different people.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="sec" id="services" style="background:#edece8;border-top:1px solid #d8d8d0">
+    <div style="max-width:460px">
+      <p class="eyebrow">Services</p>
+      <h2 class="h2" style="margin-bottom:12px">How we work with you</h2>
+      <p class="body" style="max-width:440px;margin:0">A focused set of engagements. Hover a service to see the outcome it's built to deliver.</p>
+    </div>
+    <div style="display:flex;gap:46px;align-items:flex-start;margin-top:28px">
+      <div style="flex:1.32">
+        <div style="display:flex;flex-direction:column;background:#fbf8f2;border:1px solid #e2dccf;border-radius:14px;overflow:hidden;box-shadow:0 2px 14px rgba(29,35,51,.04)">
+          <sc-for list="{{ items }}" as="item" hint-placeholder-count="6">
+            <div style="display:flex;align-items:center;gap:18px;padding:19px 24px;cursor:pointer;border-top:1px solid #ede6d8;transition:background .12s;background:{{ item.bg }};box-shadow:{{ item.bar }}" style-hover="background:#ffffff;box-shadow:inset 4px 0 0 #d9663c" onMouseEnter="{{ item.onEnter }}" onClick="{{ item.onEnter }}">
+              <span style="flex:none;min-width:70px;font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:#b98d6f">{{ item.code }}</span>
+              <span style="flex:1;font:600 18px/1.25 'Space Grotesk';color:#242a36">{{ item.name }}</span>
+              <span style="flex:none;font:600 17px 'Space Grotesk';color:{{ item.arrow }}">→</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="flex:0.82;position:sticky;top:20px">
+        <div style="background:#fffdf9;border:1px solid #ecd9cd;border-left:4px solid #d9663c;border-radius:14px;padding:30px 32px;display:flex;flex-direction:column">
+          <p style="font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;color:#c0562f;margin:0 0 20px">{{ curCode }}</p>
+          <p style="font:600 10.5px 'IBM Plex Mono',monospace;letter-spacing:.11em;text-transform:uppercase;color:#ad9f88;margin:0 0 10px">What you get</p>
+          <p style="font:400 19px/1.5 system-ui;color:#2f3542;margin:0 0 28px">{{ curOutcome }}</p>
+          <a class="btn btn-coral" href="#contact" style="align-self:flex-start;margin-top:auto">Discuss this engagement →</a>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:30px;padding-top:26px;border-top:1px solid #ded9cf;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+      <div class="row">
+        <span class="small" style="color:#8a8172">Also available:</span>
+        <span class="chip">AI Integration Strategy</span>
+        <span class="chip">Health Data &amp; Platform Architecture</span>
+        <span class="chip">Scientific → Software Translation</span>
+      </div>
+      <a class="btn btn-navy" href="uploads/Emergent Systems - Services One-Pager v2.pdf" download>Download the services one-pager (PDF) ↓</a>
+    </div>
+  </div>
+
+  <!-- SELECTED WORK -->
+  <div class="sec" id="work">
+    <p class="eyebrow">Selected work</p>
+    <h2 class="h2" style="margin-bottom:34px">Case studies</h2>
+    <div class="grid3">
+      <div style="background:#fffdf9;border:1px solid #ece3d5;border-radius:12px;overflow:hidden">
+        <div class="img" style="height:150px;border:0;border-radius:0;border-bottom:1px solid #ece3d5">CLM</div>
+        <div style="padding:22px"><div class="h3">SaMD &amp; clinical trials</div><p class="small" style="color:#c0562f;margin:0 0 10px">Closed Loop Medicine</p><p class="body">Delivered clinical-grade software and clinical-trial systems, with successful Innovate UK grants to the company's name.</p><p style="margin:14px 0 0;font:600 13px 'Space Grotesk';color:#d9663c">Read case study →</p></div>
+      </div>
+      <div style="background:#fffdf9;border:1px solid #ece3d5;border-radius:12px;overflow:hidden">
+        <div class="img" style="height:150px;border:0;border-radius:0;border-bottom:1px solid #ece3d5">OFH</div>
+        <div style="padding:22px"><div class="h3">Platform architecture</div><p class="small" style="color:#c0562f;margin:0 0 10px">Our Future Health</p><p class="body">Architecture for a personalised health platform operating at UK population scale.</p><p style="margin:14px 0 0;font:600 13px 'Space Grotesk';color:#d9663c">Read case study →</p></div>
+      </div>
+      <div style="background:#fffdf9;border:1px solid #ece3d5;border-radius:12px;overflow:hidden">
+        <div class="img" style="height:150px;border:0;border-radius:0;border-bottom:1px solid #ece3d5">DD</div>
+        <div style="padding:22px"><div class="h3">Technical due diligence</div><p class="small" style="color:#c0562f;margin:0 0 10px">Platform acquisition · Lean Library</p><p class="body">Technical, team and architecture evaluation supporting a platform acquisition decision.</p><p style="margin:14px 0 0;font:600 13px 'Space Grotesk';color:#d9663c">Read case study →</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT JAMES -->
+  <div class="sec" id="about" style="display:flex;gap:44px;align-items:flex-start;background:#edece8;border-top:1px solid #d8d8d0;border-bottom:1px solid #d8d8d0">
+    <div class="img" style="width:150px;height:150px;border-radius:50%;flex:none">photo</div>
+    <div style="flex:1">
+      <p class="eyebrow">About</p>
+      <h2 class="h2" style="margin-bottom:12px">Led by James Siddle</h2>
+      <p class="body" style="max-width:640px">SaMD and clinical trials at Closed Loop Medicine; personalised-health platform architecture at Our Future Health; AI/ML product leadership for drug discovery at BenevolentAI; technical due diligence on a platform acquisition; MSc Software Engineering, University of Oxford.</p>
+      <div class="row" style="margin-top:22px">
+        <span class="chip">SaMD · MHRA · EU MDR fluency</span>
+        <span class="chip">Patents &amp; publications</span>
+        <span class="chip">Innovate UK grant track record</span>
+      </div>
+      <div class="row" style="margin-top:20px"><a class="btn btn-ocoral" href="https://www.jamessiddle.net">Personal site ↗</a><a class="btn btn-ocoral" href="#">LinkedIn ↗</a><a class="btn btn-ocoral" href="#">CV ↗</a></div>
+      <p class="small" style="margin-top:14px">Full biography, publications and talks live on jamessiddle.net.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT / FOOTER -->
+  <div class="sec" id="contact" style="background:#1d2333;padding-top:56px;padding-bottom:40px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;padding-bottom:34px;border-bottom:1px solid #2e344a">
+      <div>
+        <h2 class="h2" style="color:#fff;margin-bottom:10px">Let's talk.</h2>
+        <p class="body" style="color:#aeb3c0;max-width:440px">Whether you're preparing a raise, facing a SaMD decision, or need technical diligence on a deal — start with a conversation.</p>
+      </div>
+      <div class="row"><a class="btn btn-coral" href="#">Book a call (Calendly)</a><a class="btn btn-owhite" href="mailto:emergentsystems.consulting@gmail.com">Email me</a></div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:22px">
+      <div class="brand" style="color:#fff;font-size:15px"><img src="uploads/Emergent Systems Icon.png" alt=""><span>Emergent Systems</span></div>
+      <p class="small" style="color:#7b8194">emergentsystems.consulting@gmail.com · © 2026 Emergent Systems</p>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { sel: 0 };
+
+  componentDidMount() { this._initFields(); }
+  componentWillUnmount() { if (this._raf) cancelAnimationFrame(this._raf); }
+
+  _initFields() {
+    this._fields = [];
+    const add = (id, opts) => {
+      const c = document.getElementById(id);
+      if (!c) return;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const w = c.clientWidth || 600, h = c.clientHeight || 300;
+      c.width = w * dpr; c.height = h * dpr;
+      const ctx = c.getContext('2d'); ctx.scale(dpr, dpr);
+      this._fields.push(Object.assign({ ctx, w, h }, opts));
+    };
+    // Faint "life cells" field fused behind the bridge chain (unchanged)
+    add('approachField', { bg: null, lo: '240,160,127', hi: '240,160,127', cell: 19, thr: 0.64, hiMin: 0.95, maxAlpha: 0.20 });
+    // Dominant hero motif: crystallisation — order emerging from a chaotic cloud, then breathing
+    this._initCrys('heroField');
+    const loop = (now) => {
+      const t = now / 1000;
+      const dt = this._last != null ? Math.min(0.05, t - this._last) : 0.016;
+      this._last = t;
+      this._fields.forEach(f => this._drawField(f, t));
+      this._crys(dt);
+      this._raf = requestAnimationFrame(loop);
+    };
+    this._raf = requestAnimationFrame(loop);
+  }
+
+  _initCrys(id) {
+    const c = document.getElementById(id); if (!c) return;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = c.clientWidth || 420, h = c.clientHeight || 300;
+    c.width = w * dpr; c.height = h * dpr;
+    const ctx = c.getContext('2d'); ctx.scale(dpr, dpr);
+    const s = { ctx, w, h };
+    // lay the network out BEYOND the canvas on every side, so it reads as one
+    // part of a larger structure (overflow is clipped by the hero frame)
+    const cols = 13, rows = 7;
+    const x0 = -w * 0.12, x1 = w * 1.12, y0 = -h * 0.14, y1 = h * 1.14;
+    const gw = (x1 - x0) / (cols - 1), gh = (y1 - y0) / (rows - 1);
+    s.nodes = [];
+    for (let r = 0; r < rows; r++) for (let cc = 0; cc < cols; cc++) {
+      const jx = (Math.random() - 0.5) * gw * 0.7, jy = (Math.random() - 0.5) * gh * 0.7;
+      // wide spread of node sizes (skewed small, a few large)
+      const sz = 1.5 + Math.pow(Math.random(), 1.8) * 5.2;
+      s.nodes.push({ tx: x0 + cc * gw + jx, ty: y0 + r * gh + jy, ph: Math.random() * 6.28, hx: Math.random() - 0.5, hy: Math.random() - 0.5, sz, hub: Math.random() < 0.14 });
+    }
+    const thr = Math.max(gw, gh) * 1.15; s.edges = [];
+    for (let i = 0; i < s.nodes.length; i++) for (let j = i + 1; j < s.nodes.length; j++) {
+      const a = s.nodes[i], b = s.nodes[j], dx = a.tx - b.tx, dy = a.ty - b.ty;
+      if (dx * dx + dy * dy < thr * thr) s.edges.push([i, j]);
+    }
+    s.t = 0; this.cry = s;
+  }
+  _crys(dt) {
+    const s = this.cry; if (!s) return; s.t += dt; const ctx = s.ctx, t = s.t;
+    ctx.fillStyle = '#1d2333'; ctx.fillRect(0, 0, s.w, s.h);
+    const sm = (p) => { p = Math.min(1, Math.max(0, p)); return p * p * (3 - 2 * p); };
+    // full loop: crystallise (sweep) -> hold (breathing) -> decohere -> brief gap -> repeat
+    const Tc = 6, Th = 5, Td = 3.5, P = Tc + Th + Td + 1.5, ct = s.t % P;
+    const co = s.nodes.map(p => {
+      let raw;
+      if (ct < Tc) { const front = -s.w * 0.15 + (s.w * 1.42) * (ct / Tc); raw = (front - p.tx) / 70 + 0.5; }
+      else if (ct < Tc + Th) raw = 1.6;
+      else if (ct < Tc + Th + Td) raw = 1.6 * (1 - (ct - (Tc + Th)) / Td);
+      else raw = 0;
+      const es = sm(raw);
+      return { x: p.tx + (p.hx * 118 + Math.sin(t * 1.4 + p.ph) * 10) * (1 - es) + Math.sin(t * 0.55 + p.ph) * 6 * es,
+               y: p.ty + (p.hy * 90 + Math.cos(t * 1.2 + p.ph) * 10) * (1 - es) + Math.cos(t * 0.48 + p.ph * 1.6) * 5 * es, es, sz: p.sz, hub: p.hub }; });
+    ctx.strokeStyle = 'rgba(214,220,232,0.9)'; ctx.lineWidth = 1.1;
+    for (const [i, j] of s.edges) { const a = co[i], b = co[j], al = Math.min(a.es, b.es); if (al > 0.5) { ctx.globalAlpha = (al - 0.5) / 0.5 * 0.42; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); } }
+    ctx.globalAlpha = 1;
+    for (const p of co) { const rad = p.sz * (0.55 + p.es * 0.5);
+      ctx.fillStyle = p.hub ? 'rgba(240,160,127,' + (0.55 + p.es * 0.45) + ')' : 'rgba(255,255,255,' + (0.5 + p.es * 0.5) + ')';
+      ctx.beginPath(); ctx.arc(p.x, p.y, rad, 0, 6.2832); ctx.fill(); }
+  }
+
+  _drawField(f, t) {
+    const ctx = f.ctx;
+    if (f.bg) { ctx.fillStyle = f.bg; ctx.fillRect(0, 0, f.w, f.h); }
+    else { ctx.clearRect(0, 0, f.w, f.h); }
+    const cell = f.cell;
+    for (let gy = cell / 2; gy < f.h; gy += cell) for (let gx = cell / 2; gx < f.w; gx += cell) {
+      const v = Math.sin(gx * 0.045 + t * 0.7) + Math.sin(gy * 0.06 - t * 0.5)
+        + Math.sin((gx + gy) * 0.035 + t * 0.9) + Math.sin(Math.hypot(gx - f.w / 2, gy - f.h / 2) * 0.03 - t * 0.8);
+      const n = (v + 4) / 8;
+      if (n > f.thr) {
+        const k = (n - f.thr) / (1 - f.thr);
+        const col = n > f.hiMin ? f.hi : f.lo;
+        const a = Math.min(f.maxAlpha, 0.12 + k * 0.6);
+        ctx.beginPath();
+        ctx.fillStyle = 'rgba(' + col + ',' + a + ')';
+        ctx.arc(gx, gy, k * cell * 0.5, 0, 6.2832);
+        ctx.fill();
+      }
+    }
+  }
+
+  renderVals() {
+    const services = [
+      { code: 'CTO',       name: 'Fractional CTO — Digital Health',        outcome: 'Secure a senior technical leader without full-time hiring.' },
+      { code: 'SPRINT',    name: 'Technology Strategy Sprint',             outcome: 'Develop a technology strategy to realise your vision, de-risked with a scalable prototype.' },
+      { code: 'DILIGENCE', name: 'Technical Due Diligence',               outcome: 'Gain a clear read on technical risk before you commit.' },
+      { code: 'SaMD',      name: 'SaMD & Regulated Software Advisory',     outcome: 'Establish a credible regulatory path for your clinical software.' },
+      { code: 'BOARD',     name: 'Board Technical Advisor',               outcome: 'Provide board assurance for your technology choices.' },
+      { code: 'GRANT',     name: 'Innovate UK Grant Advisory',            outcome: 'Build strong, reviewer-ready innovation submissions.' },
+    ];
+    const sel = Math.min(this.state.sel, services.length - 1);
+    const items = services.map((s, i) => ({
+      code: s.code,
+      name: s.name,
+      bg: i === sel ? '#ffffff' : 'transparent',
+      bar: i === sel ? 'inset 4px 0 0 #d9663c' : 'none',
+      arrow: i === sel ? '#d9663c' : '#cbc2b1',
+      onEnter: () => this.setState({ sel: i }),
+    }));
+    const cur = services[sel];
+    return { items, curCode: cur.code, curName: cur.name, curOutcome: cur.outcome };
+  }
+}
+</script>
+</body>
+</html>

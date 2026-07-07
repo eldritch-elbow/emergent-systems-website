@@ -1,0 +1,94 @@
+---
+const base = import.meta.env.BASE_URL;
+
+const services = [
+  {
+    code: 'CTO',
+    name: 'Fractional CTO — Digital Health',
+    outcome: 'Secure a senior technical leader without full-time hiring.',
+  },
+  {
+    code: 'SPRINT',
+    name: 'Technology Strategy Sprint',
+    outcome:
+      'Develop a technology strategy to realise your vision, de-risked with a scalable prototype.',
+  },
+  {
+    code: 'DILIGENCE',
+    name: 'Technical Due Diligence',
+    outcome: 'Gain a clear read on technical risk before you commit.',
+  },
+  {
+    code: 'SaMD',
+    name: 'SaMD & Regulated Software Advisory',
+    outcome: 'Establish a credible regulatory path for your clinical software.',
+  },
+  {
+    code: 'BOARD',
+    name: 'Board Technical Advisor',
+    outcome: 'Provide board assurance for your technology choices.',
+  },
+  {
+    code: 'GRANT',
+    name: 'Innovate UK Grant Advisory',
+    outcome: 'Build strong, reviewer-ready innovation submissions.',
+  },
+];
+
+const first = services[0];
+---
+
+<div class="sec" id="services" style="background:var(--c-band);border-top:1px solid var(--c-band-border)">
+  <div style="max-width:460px">
+    <p class="eyebrow">Services</p>
+    <h2 class="h2" style="margin-bottom:12px">How we work with you</h2>
+    <p class="body" style="max-width:440px;margin:0">
+      A focused set of engagements. Hover a service to see the outcome it's designed to deliver.
+    </p>
+  </div>
+  <div id="servicesRoot" style="display:flex;gap:46px;align-items:flex-start;margin-top:28px">
+    <div style="flex:1.32">
+      <div class="svc-list">
+        {
+          services.map((s, i) => (
+            <div class={`svc-row${i === 0 ? ' is-selected' : ''}`} data-code={s.code} data-outcome={s.outcome}>
+              <span class="svc-code">{s.code}</span>
+              <span class="svc-name">{s.name}</span>
+              <span class="svc-arrow">→</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div style="flex:0.82;position:sticky;top:20px">
+      <div class="callout">
+        <p class="callout-code">{first.code}</p>
+        <p class="callout-label">What you get</p>
+        <p class="callout-outcome">{first.outcome}</p>
+        <a class="btn btn-coral" href={`${base}#contact`} style="align-self:flex-start;margin-top:auto"
+          >Discuss this engagement →</a
+        >
+      </div>
+    </div>
+  </div>
+  <div
+    style="margin-top:30px;padding-top:26px;border-top:1px solid #ded9cf;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap"
+  >
+    <div class="row">
+      <span class="small" style="color:var(--c-text-muted-1)">Also available:</span>
+      <span class="chip">AI Integration Strategy</span>
+      <span class="chip">Health Data &amp; Platform Architecture</span>
+      <span class="chip">Scientific → Software Translation</span>
+    </div>
+    <a class="btn btn-navy" href={`${base}uploads/emergent-systems-services-one-pager.pdf`} download
+      >Download - services one-pager (PDF) ↓</a
+    >
+  </div>
+</div>
+
+<script>
+  import { initServicesList } from '../scripts/servicesList';
+
+  const root = document.getElementById('servicesRoot');
+  if (root) initServicesList(root);
+</script>

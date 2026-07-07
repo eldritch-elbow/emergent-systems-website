@@ -1,0 +1,29 @@
+---
+const base = import.meta.env.BASE_URL;
+const bookingUrl = 'https://calendar.app.google/3Z2RBB5azC43X4vdA';
+---
+
+<div class="sec" id="contact" style="background:var(--c-ink);padding-top:56px;padding-bottom:40px">
+  <div
+    style="display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;padding-bottom:34px;border-bottom:1px solid var(--c-ink-border)"
+  >
+    <div>
+      <h2 class="h2" style="color:#fff;margin-bottom:10px">Let's talk.</h2>
+      <p class="body" style="color:var(--c-text-on-navy);max-width:440px">
+        Whether you're preparing a raise, facing a SaMD decision, or need technical diligence on a
+        deal — start with a conversation.
+      </p>
+    </div>
+    <div class="row">
+      <a class="btn btn-coral" href={bookingUrl} target="_blank" rel="noopener">Book a call</a>
+      <a class="btn btn-owhite" href="mailto:emergentsystems.consulting@gmail.com">Email me</a>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:22px">
+    <div class="brand" style="color:#fff;font-size:15px">
+      <img src={`${base}uploads/emergent-systems-icon.png`} alt="" />
+      <span>Emergent Systems</span>
+    </div>
+    <p class="small" style="color:#7b8194">emergentsystems.consulting@gmail.com · © 2026 Emergent Systems</p>
+  </div>
+</div>

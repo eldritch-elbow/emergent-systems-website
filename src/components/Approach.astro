@@ -1,0 +1,38 @@
+<div class="sec" id="approach" style="padding-top:60px;padding-bottom:60px">
+  <div style="position:relative;background:var(--c-ink);border-radius:var(--radius-feature);padding:44px 48px;overflow:hidden">
+    <canvas id="approachField" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+    <div style="position:relative;z-index:1">
+      <p class="eyebrow" style="color:var(--c-coral-light)">End to end</p>
+      <h2 class="h2" style="color:#fff;margin-bottom:30px">One advisor, the full technical picture</h2>
+      <div class="chain">
+        <div class="cnode"><div class="circle">01</div><div class="clab">Scientific<br />insight</div></div>
+        <div class="arrow"></div>
+        <div class="cnode"><div class="circle">02</div><div class="clab">AI / ML<br />judgement</div></div>
+        <div class="arrow"></div>
+        <div class="cnode"><div class="circle">03</div><div class="clab">Software<br />architecture</div></div>
+        <div class="arrow"></div>
+        <div class="cnode"><div class="circle">04</div><div class="clab">Regulatory<br />pathway</div></div>
+        <div class="arrow"></div>
+        <div class="cnode">
+          <div class="circle" style="border-color:var(--c-coral-light)">05</div>
+          <div class="clab">Investor<br />narrative</div>
+        </div>
+      </div>
+      <p class="body" style="color:var(--c-text-on-navy);max-width:760px;margin-top:34px">
+        Emergent Systems finds the patterns hidden across scientific insight, AI/ML judgement,
+        software architecture, regulatory pathway, and investor narrative — and resolves them into
+        a single coherent technology strategy; a rare combination that usually gets split
+        across four different people.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { LifeCellsCanvas } from '../scripts/lifeCellsCanvas';
+
+  const canvas = document.getElementById('approachField');
+  if (canvas instanceof HTMLCanvasElement) {
+    new LifeCellsCanvas(canvas);
+  }
+</script>

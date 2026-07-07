@@ -1,0 +1,35 @@
+---
+import { caseStudies } from '../content/caseStudies';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<div class="sec" id="work">
+  <p class="eyebrow">Selected work</p>
+  <h2 class="h2" style="margin-bottom:34px">Case studies</h2>
+  <div class="grid3">
+    {
+      caseStudies.map((cs) => (
+        <div style="background:var(--c-card-work);border:1px solid var(--c-card-border-work);border-radius:var(--radius-card);overflow:hidden">
+          <div
+            class="img-placeholder"
+            style="height:150px;border:0;border-radius:0;border-bottom:1px solid var(--c-card-border-work)"
+          >
+            {cs.code}
+          </div>
+          <div style="padding:22px">
+            <div class="h3">{cs.cardTitle}</div>
+            <p class="small" style="color:var(--c-coral-dark);margin:0 0 10px">{cs.client}</p>
+            <p class="body">{cs.cardBody}</p>
+            <a
+              href={`${base}work/${cs.slug}/`}
+              style="display:block;margin:14px 0 0;font:600 13px 'Space Grotesk';color:var(--c-coral);text-decoration:none"
+            >
+              Read case study →
+            </a>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>
