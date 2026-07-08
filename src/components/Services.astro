@@ -52,7 +52,7 @@ const first = services[0];
       A focused set of engagements. Hover a service to see the outcome it's designed to deliver.
     </p>
   </div>
-  <div id="servicesRoot" style="display:flex;gap:46px;align-items:stretch;margin-top:28px">
+  <div id="servicesRoot" class="svc-columns" style="display:flex;gap:46px;align-items:stretch;margin-top:28px">
     <div style="flex:1.32">
       <div class="svc-list">
         {
@@ -71,7 +71,7 @@ const first = services[0];
         }
       </div>
     </div>
-    <div style="flex:0.82;position:sticky;top:20px">
+    <div class="svc-callout-wrap" style="flex:0.82;position:sticky;top:20px">
       <div class="callout">
         <p class="callout-code">{first.code}</p>
         <p class="callout-label">What you get</p>

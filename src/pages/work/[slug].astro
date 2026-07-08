@@ -61,7 +61,7 @@ const breadcrumbSchema = {
 
     {
       !caseStudy.confidential && (
-        <div style="padding:0 84px 8px">
+        <div class="cs-hero-image-wrap" style="padding:0 84px 8px">
           <img
             src={`${base}uploads/case-studies/${caseStudy.heroImage}`}
             alt={caseStudy.heroImageLabel}
@@ -73,7 +73,7 @@ const breadcrumbSchema = {
 
     {
       !caseStudy.confidential ? (
-        <div class="sec" style="display:flex;gap:52px;align-items:flex-start;padding-top:44px">
+        <div class="sec cs-body-row" style="display:flex;gap:52px;align-items:flex-start;padding-top:44px">
           <div style="flex:1.7">
             {caseStudy.sections.map((section) => (
               <div style="margin-bottom:34px">
@@ -94,7 +94,7 @@ const breadcrumbSchema = {
             {caseStudy.note && <p class="note">{caseStudy.note}</p>}
           </div>
 
-          <div style="flex:1;position:sticky;top:20px">
+          <div class="cs-sidebar-wrap" style="flex:1;position:sticky;top:20px">
             <div class="side">
               <p class="k">At a glance</p>
               <p class="v" style="margin-bottom:20px">
@@ -121,7 +121,7 @@ const breadcrumbSchema = {
           </div>
         </div>
       ) : (
-        <div class="sec" style="padding-top:12px;padding-bottom:64px;display:flex;gap:52px;align-items:flex-start">
+        <div class="sec cs-body-row" style="padding-top:12px;padding-bottom:64px;display:flex;gap:52px;align-items:flex-start">
           <div style="flex:1.7">
             <div class="conf">
               <span class="lock">
@@ -150,7 +150,7 @@ const breadcrumbSchema = {
               </div>
             </div>
           </div>
-          <div style="flex:1;position:sticky;top:20px">
+          <div class="cs-sidebar-wrap" style="flex:1;position:sticky;top:20px">
             <div class="side">
               <p class="k">What can be shared</p>
               <p class="v" style="margin-bottom:20px">
@@ -184,6 +184,7 @@ const breadcrumbSchema = {
     </div>
 
     <div
+      class="cs-footer-bar"
       style="background:var(--c-ink);padding:40px 84px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap"
     >
       <div class="brand" style="color:#fff;font-size:15px">
